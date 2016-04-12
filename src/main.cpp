@@ -32,6 +32,8 @@
 #include <boost/asio.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
 
+#include <boost/asio/impl/src.hpp>
+
 #include <CoinCore/random.h>
 
 const int MINIMUM_SPLASH_SECS = 5;
