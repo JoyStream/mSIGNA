@@ -30,6 +30,8 @@
 #include "CoinQ_vault_db.hxx"
 #include "CoinQ_vault_db-odb.hxx"
 
+#include <boost/asio/impl/src.hpp>
+
 const unsigned char BASE58_VERSIONS[] = { 0x00, 0x05 };
 
 using namespace std;

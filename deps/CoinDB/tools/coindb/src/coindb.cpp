@@ -32,6 +32,7 @@
 #include <functional>
 
 #include <boost/algorithm/string.hpp>
+#include <boost/asio/impl/src.hpp>
 
 const std::string COINDB_VERSION = "v0.7.5";
 const std::string DEFAULT_NETWORK = "bitcoin";
