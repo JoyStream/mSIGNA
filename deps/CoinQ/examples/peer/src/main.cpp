@@ -21,6 +21,8 @@
 
 #include <signal.h>
 
+#include <boost/asio/impl/src.hpp>
+
 bool g_bShutdown = false;
 
 void finish(int sig)

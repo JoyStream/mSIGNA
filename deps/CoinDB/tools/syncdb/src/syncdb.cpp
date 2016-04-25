@@ -24,6 +24,8 @@
 #include <thread>
 #include <chrono>
 
+#include <boost/asio/impl/src.hpp>
+
 using namespace CoinDB;
 using namespace CoinQ;
 using namespace std;

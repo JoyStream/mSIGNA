@@ -17,6 +17,8 @@
 #include <sstream>
 #include <stdexcept>
 
+#include <boost/asio/impl/src.hpp>
+
 using namespace Coin;
 using namespace CoinCrypto;
 using namespace CoinQ::Script;
