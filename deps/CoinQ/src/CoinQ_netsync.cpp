@@ -190,12 +190,15 @@ NetworkSync::NetworkSync(const CoinQ::CoinParams& coinParams, bool bCheckProofOf
 
                 vector<uchar_vector> locatorHashes = m_blockTree.getLocatorHashes(1);
                 if (locatorHashes.empty()) throw runtime_error("Blocktree is empty.");
-                if (headersMessage.headers[headersMessage.headers.size() - 1].hash() != locatorHashes[0])
+                uchar_vector peerBranchTipHash = headersMessage.headers[headersMessage.headers.size() - 1].hash();
+                if (peerBranchTipHash != locatorHashes[0])
                 {
-                    throw runtime_error("Blocktree conflicts with peer.");
+                    // peer's best chain is different than ours, we will continue to fetch headers
+                    // at some point if their chain is heavier it will be reflected in the blocktree
+                    LOGGER(trace) << "Processed headers did not form a new best chain." << std::endl;
                 }
  
-                peer.getHeaders(locatorHashes);
+                peer.getHeaders({peerBranchTipHash});
             }
             else
             {
