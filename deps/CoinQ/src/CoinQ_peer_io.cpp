@@ -340,6 +340,7 @@ void Peer::do_stop()
     bRunning = false;
     bHandshakeComplete = false;
     bWriteReady = false;
+    keepalive_timer_.cancel();
     notifyClose(*this);
     notifyStop(*this);
 }
